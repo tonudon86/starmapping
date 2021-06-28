@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>D3-Celestial Starmap</title>
+  <script type="text/javascript" src="./js/d3.min.js"></script>
+  <script type="text/javascript" src="./js/d3.geo.js"></script>
+  <script type="text/javascript" src="./js/cal.js"></script>
+  <link rel="stylesheet" href="./cal.css">
+</head>
+<body style="background-color: rgb(141, 99, 99);">
+  <div style="width:200px; height:500px;"><div id="celestial-map" ></div></div>
+ 
+  <div>
+  </div>
+  <script type="text/javascript">
+
+Celestial.display({
+  location: true,
+  geopos:[27.496576,75.843085],
+  form: false,
+  background: { fill: "black", stroke: "#000000", opacity:1},
+  projection: "airy",
+  datapath: "./data/",
+  planets:  { show: false },
+  stars: {
+    colors: false,
+    names: false,
+    style: { fill: "#fff", opacity:0.5 },
+    limit: 1000,
+    size: 5
+  },
+  dsos: { show: true },
+  constellations: {
+    show: false,    // Show constellations
+    names: false,   // Show constellation names
+    desig: false,   // Show short constellation names (3 letter designations)
+    nameStyle: { fill:"#fff", align: "center", baseline: "middle", opacity:0.8,
+                 font: ["bold 10px Helvetica, Arial, sans-serif",  // Different fonts for brighter &
+                        "bold 10px Helvetica, Arial, sans-serif",  // sdarker constellations
+                        "bold 10px Helvetica, Arial, sans-serif"]},
+    lines: true,   // Show constellation lines
+    linestyle: { stroke: "#ffff", width:0.5, opacity: 0.5 },
+    bounds: false,  // Show constellation boundaries
+    boundstyle: { stroke: "#ffff",  width: 0, opacity: 0.8, dash: [2, 4] }
+  },
+  background: {        // Background style
+    fill: "transparent",   // Area fill
+    opacity: 1, 
+    stroke: "#0000", // Outline
+    width: 1.5
+  }, 
+  planets: { show: false},
+  mw: {
+    show: false,    // Show Milky Way as filled polygons
+  },
+  interactive:false,
+  lines: {
+    graticule: { show: true, stroke: "#cccccc", width: 0.5, opacity: 0.2,      // Show graticule lines
+      // grid values: "outline", "center", or [lat,...] specific position
+      // lon: {pos: ["center"], fill: "#eee", font: "10px Helvetica, Arial, sans-serif"},
+      // // grid values: "outline", "center", or [lon,...] specific position
+      // lat: {pos: ["center"], fill: "#eee", font: "10px Helvetica, Arial, sans-serif"}
+    },
+    equatorial: { show: false, stroke: "#fff", width: 1.3, opacity: 0.7 },    // Show equatorial plane
+    ecliptic: { show: false, stroke: "#66cc66", width: 1.3, opacity: 0.7 },      // Show ecliptic plane
+    galactic: { show: false, stroke: "#cc6666", width: 1.3, opacity: 0.7 },     // Show galactic plane
+    supergalactic: { show: false, stroke: "#cc66cc", width: 1.3, opacity: 0.7 } // Show supergalactic plane
+}
+});
+
+setTimeout(()=>{
+  
+  // let canvas = document.getElementById("canvascircle");
+  // let img = canvas.toDataURL("image/png");
+  // document.write('<img style="background-color: black;" src="'+img+'" width="600px" height="600px"/>');
+
+
+},5000)
+
+
+  </script>
+
+ 
+</body>
+</html>
