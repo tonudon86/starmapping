@@ -446,6 +446,7 @@ color: #B8B8B8;
   justify-content: center;
   text-align: center;
   padding: 30px;
+  margin-top: 35px;
 }
 
 .sub-heading{
@@ -1169,4 +1170,10 @@ a {
   
   
   text-decoration:none;
+}
+
+
+#map {
+  font-size: 11px;
+    line-height: 52px;
 }
